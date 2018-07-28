@@ -8,7 +8,14 @@
     window.test = 'preload'
     window.process = process
     if (process.env.sandboxmain) {
-      window.test = process.env.sandboxmain
+      window.test = {
+        env: process.env,
+        pid: process.pid,
+        arch: process.arch,
+        platform: process.platform,
+        version: process.version,
+        versions: process.versions
+      }
     }
   } else if (location.href !== 'about:blank') {
     addEventListener('DOMContentLoaded', () => {

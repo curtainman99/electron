@@ -8,6 +8,23 @@ Electron's `process` object is extended from the
 [Node.js `process` object](https://nodejs.org/api/process.html).
 It adds the following events, properties, and methods:
 
+## Sandbox
+
+In sandboxed renderers the `process` object contains only a subset of the APIs:
+- `crash()`
+- `hang()`
+- `getHeapStatistics()`
+- `getProcessMemoryInfo()`
+- `getSystemMemoryInfo()`
+- `argv`
+- `pid`
+- `arch`
+- `platform`
+- `execPath`
+- `env`
+- `version`
+- `versions`
+
 ## Events
 
 ### Event: 'loaded'
